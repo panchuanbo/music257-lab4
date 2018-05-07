@@ -35,7 +35,7 @@ public class GM : MonoBehaviour {
 	}
 
 	private void Update() {
-		// spawnEnemy();
+		
 	}
 
 	private void spawnEnemy() {
