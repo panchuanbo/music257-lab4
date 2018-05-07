@@ -16,6 +16,7 @@ public class GM : MonoBehaviour {
 	// MARK: - Private Instance
 
 	private DisplayData headset = null;
+	private int currentState = 1;
 
 	// MARK: - Game Management
 
@@ -42,5 +43,9 @@ public class GM : MonoBehaviour {
 		Vector3 enemyPos = new Vector3(Random.Range(-20, 20), 0f, 8.83f);
 		Quaternion shipAngle = Quaternion.Euler(0f, 180f, 0f);
 		Instantiate(basicEnemy, enemyPos, shipAngle);
+	}
+
+	public void loseLife() {
+		UnityEngine.Debug.Log("Lost Life :(");
 	}
 }
