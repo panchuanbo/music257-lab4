@@ -9,14 +9,11 @@ public class ShootToKill : MonoBehaviour {
 	public GameObject thisExplosion;
 	public float setLevel;
 
-	// Private variables
-//	private DisplayData myHeadset;
-
-	void Start () {
-//		myHeadset = Camera.current.GetComponent<DisplayData> ();
-	}
+	void Start () {}
 
 	void OnCollisionEnter (Collision other) {
+		if (other.gameObject.tag != "Laser") return;
+
 		if (setLevel > armorClass) {
 			Instantiate (thisExplosion, transform.position, Quaternion.identity);
 			//Play explosion sound

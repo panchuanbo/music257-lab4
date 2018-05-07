@@ -80,4 +80,12 @@ public class DisplayData : MonoBehaviour
 		GUILayout.Label("Delta:" + delta);
 
     }
+
+	public int getAttention() {
+		return this.attention1;
+	}
+
+	public int getMeditation() {
+		return this.meditation1;
+	}
 }
