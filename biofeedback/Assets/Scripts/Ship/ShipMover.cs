@@ -7,6 +7,7 @@ public class ShipMover : MonoBehaviour {
 	public float shipSpeed = 1.0f;
 	public float boundaryValue;
 	public GameObject shot;
+	public GameObject shipExplosion;
 
 	// Update is called once per frame
 	void Update() {
@@ -22,6 +23,20 @@ public class ShipMover : MonoBehaviour {
 			GameObject newShot;
 			newShot = Instantiate(shot, shotPos, shotAngle);
 			newShot.GetComponent<ShotMover>().ship = gameObject;
+			newShot.GetComponent<ShotMover>().focusLevel = 1; /** Make it pull from attention **/
+
+			GM.instance.playLaserSound();
 		}
+	}
+
+	private void OnCollisionEnter(Collision collision) {
+		Instantiate(shipExplosion, this.transform.position, Quaternion.identity);
+		Destroy(this.gameObject);
+		Destroy(collision.gameObject);
+
+		GM.instance.playShipExplosion();
+		GM.instance.loseLife();
+
+		GM.instance.recreateShip();
 	}
 }

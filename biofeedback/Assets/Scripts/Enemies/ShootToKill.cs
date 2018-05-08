@@ -9,18 +9,24 @@ public class ShootToKill : MonoBehaviour {
 	public GameObject thisExplosion;
 	public float setLevel;
 
+
+
 	void Start () {}
 
 	void OnCollisionEnter (Collision other) {
 		if (other.gameObject.tag != "Laser") return;
 
-		if (setLevel > armorClass) {
+		float focus = other.gameObject.GetComponent<ShotMover>().focusLevel;
+
+		if (focus > armorClass) {
 			Instantiate (thisExplosion, transform.position, Quaternion.identity);
 			//Play explosion sound
 			Destroy(other.gameObject);
 			Destroy(gameObject);
+
+			GM.instance.playEnemyExplosion();
 		} else {
-			//Play "thunk" sound
+			GM.instance.playThunkSound();
 		}
 	}
 }

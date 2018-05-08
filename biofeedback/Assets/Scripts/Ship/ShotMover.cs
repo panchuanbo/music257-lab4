@@ -8,6 +8,7 @@ public class ShotMover : MonoBehaviour {
 	public float shotSpeed;
 	public GameObject ship;
 	public float range;
+	public float focusLevel;
 
 	// Update is called once per frame
 	void Update () {
