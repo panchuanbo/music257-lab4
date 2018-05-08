@@ -24,6 +24,9 @@ public class GM : MonoBehaviour {
 	public Text messageText;
 	public Text gameOverText;
 	public Text numDestroyedText;
+	public Text attentionRequiredText;
+
+	public Camera mainCamera;
 
 	// MARK: - Private Instance
 
@@ -34,9 +37,9 @@ public class GM : MonoBehaviour {
 	private int enemiesDestroyed = 0;
 
 	private int timeUntilNextSpawn = 1;
-	private int spawnInterval = 65;
+	private int spawnInterval = 85;
 	private int timeUntilDifficulityIncrease = 600;
-	private int attentionRequired = 25;
+	private int attentionRequired = 0;
 
 	private string[] messages = { 
 		"You're still alive? Wow.", 
@@ -65,7 +68,8 @@ public class GM : MonoBehaviour {
 	public void Setup() {
 		this.gameOverText.enabled = false;
 
-		audioSource = GetComponent<AudioSource>();
+		this.audioSource = GetComponent<AudioSource>();
+		this.headset = this.mainCamera.GetComponent<DisplayData>();
 
 		Instantiate(this.playerShip);
 	}
@@ -85,6 +89,8 @@ public class GM : MonoBehaviour {
 			spawnInterval -= 5;
 			attentionRequired += 5;
 			attentionRequired = (attentionRequired >= 100) ? 100 : attentionRequired;
+
+			attentionRequiredText.text = "Attention Required: " + attentionRequired;
 		}
 	}
 
@@ -114,6 +120,7 @@ public class GM : MonoBehaviour {
 	// MARK: - Headset Data
 
 	public float getAttention() {
+		Debug.Log("My Attention is: " + this.headset.getAttention());
 		return this.headset.getAttention();
 	}
 

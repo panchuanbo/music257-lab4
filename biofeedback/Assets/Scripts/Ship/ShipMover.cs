@@ -23,7 +23,8 @@ public class ShipMover : MonoBehaviour {
 			GameObject newShot;
 			newShot = Instantiate(shot, shotPos, shotAngle);
 			newShot.GetComponent<ShotMover>().ship = gameObject;
-			newShot.GetComponent<ShotMover>().focusLevel = 1; /** Make it pull from attention **/
+			//newShot.GetComponent<ShotMover>().focusLevel = 1; /** Make it pull from attention **/
+			newShot.GetComponent<ShotMover>().focusLevel = GM.instance.getAttention();
 
 			GM.instance.playLaserSound();
 		}
