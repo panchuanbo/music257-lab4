@@ -16,7 +16,10 @@ public class GM : MonoBehaviour {
 	// MARK: - Private Instance
 
 	private DisplayData headset = null;
-	private int currentState = 1;
+	private int currentState = 0;
+
+	private int timeUntilNextSpawn = 1;
+	private int spawninterval = 65;
 
 	// MARK: - Game Management
 
@@ -35,8 +38,14 @@ public class GM : MonoBehaviour {
 		spawnEnemy();
 	}
 
-	private void Update() {
-		
+	private void Update() { /* we're fixed :D */ }
+
+	private void FixedUpdate() {
+		timeUntilNextSpawn++;
+
+		if (timeUntilNextSpawn % spawninterval == 0) {
+			spawnEnemy();
+		}
 	}
 
 	private void spawnEnemy() {
