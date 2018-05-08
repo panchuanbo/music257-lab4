@@ -11,7 +11,7 @@ public class GM : MonoBehaviour {
 
 	// MARK: - Public Instance
 
-	public int lives = 3;
+	public int lives = 5;
 	public GameObject basicEnemy;
 	public GameObject playerShip;
 
@@ -122,6 +122,10 @@ public class GM : MonoBehaviour {
 	public float getAttention() {
 		Debug.Log("My Attention is: " + this.headset.getAttention());
 		return this.headset.getAttention();
+	}
+
+	public float getAttentionRequired() {
+		return this.attentionRequired;
 	}
 
 	// MARK: - Sound

@@ -751,7 +751,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -80, y: 15}
+  m_AnchoredPosition: {x: -338.5, y: 40}
   m_SizeDelta: {x: 640, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1683086551
@@ -895,7 +895,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0633a9dd1a9f48f4b8bc81fe0a594be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lives: 3
+  lives: 5
   basicEnemy: {fileID: 1670722206585208, guid: 74175ad273c92494cb78bc35091c197b, type: 2}
   playerShip: {fileID: 1445825497033072, guid: cb8c7b4ed86e548d9b474c0f3d4d3fc9, type: 2}
   shipExplosion: {fileID: 8300000, guid: 9f5b9125bbf1244778ad8429ed85310e, type: 3}
@@ -907,6 +907,7 @@ MonoBehaviour:
   gameOverText: {fileID: 1746915870}
   numDestroyedText: {fileID: 1307761297}
   attentionRequiredText: {fileID: 1861542577}
+  mainCamera: {fileID: 676628938}
 --- !u!4 &1783808476
 Transform:
   m_ObjectHideFlags: 0
@@ -1082,7 +1083,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Attention Required: 25'
+  m_Text: 'Attention Required: 0'
 --- !u!222 &1861542578
 CanvasRenderer:
   m_ObjectHideFlags: 0

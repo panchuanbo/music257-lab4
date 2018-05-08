@@ -24,7 +24,6 @@ GameObject:
   - component: {fileID: 54607987111353312}
   - component: {fileID: 65058227837385938}
   - component: {fileID: 114210672810701820}
-  - component: {fileID: 114768854582026942}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -130,15 +129,3 @@ MonoBehaviour:
   boundaryValue: 20
   shot: {fileID: 1247300641932774, guid: a8404c360d9a67840bf87d8dbfa75e7e, type: 2}
   shipExplosion: {fileID: 100008, guid: a93496017806b7740910df5fd946f306, type: 2}
---- !u!114 &114768854582026942
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1445825497033072}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6804740ed02267f4390e9a77f6d81ac6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  thisExplosion: {fileID: 0}

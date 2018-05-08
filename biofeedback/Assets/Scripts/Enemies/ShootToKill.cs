@@ -18,7 +18,7 @@ public class ShootToKill : MonoBehaviour {
 
 		float focus = other.gameObject.GetComponent<ShotMover>().focusLevel;
 
-		if (focus > armorClass) {
+		if (focus >= GM.instance.getAttentionRequired()) {
 			Instantiate (thisExplosion, transform.position, Quaternion.identity);
 			//Play explosion sound
 			Destroy(other.gameObject);
