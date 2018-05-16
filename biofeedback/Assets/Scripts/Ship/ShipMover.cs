@@ -32,12 +32,12 @@ public class ShipMover : MonoBehaviour {
 
 	private void OnCollisionEnter(Collision collision) {
 		Instantiate(shipExplosion, this.transform.position, Quaternion.identity);
-		Destroy(this.gameObject);
-		Destroy(collision.gameObject);
 
 		GM.instance.playShipExplosion();
 		GM.instance.loseLife();
 
+		Destroy(collision.gameObject);
+		Destroy(this.gameObject);
 		GM.instance.recreateShip();
 	}
 }
